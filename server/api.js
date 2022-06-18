@@ -113,7 +113,23 @@ apiRouter
 
 //router for meetings
 apiRouter
-    .get('/meetings', (req, res) => {})
-    .post('/meetings', (req, res) => {});
+    .get('/meetings', (req, res) => {
+        res.send(getAllFromDatabase('meetings'));
+    })
+    .post('/meetings', (req, res) => {
+        let newMeeting = {
+            time: req.body.time,
+            date: new Date(req.body.date),
+            day: req.body.day,
+            note: req.body.note
+        }
+        addToDatabase('meetings', newMeeting);
+        res.send(newMeeting);
+    })
+    .delete('/meetings', (req, res) => {
+      deleteAllFromDatabase('meetings'); 
+      res.status(204).send(`All meetings have been cleared`);
+
+    });
 
 module.exports = apiRouter;
