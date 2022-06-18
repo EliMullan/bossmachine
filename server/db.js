@@ -71,7 +71,7 @@ const createMeeting = () => {
   return {
     id: `${meetingIdCounter++}`,
     time: date.toTimeString().slice(0, 5),
-    date: date,
+    date: date, 
     day: date.toDateString(),
     note: `${option} ${faker.company.catchPhrase()}`,
   }
