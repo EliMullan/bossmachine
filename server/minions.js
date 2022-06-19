@@ -9,6 +9,9 @@ const {createMeeting,
     deleteAllFromDatabase} = require('./db'); 
 const bodyparser = require('body-parser');
 
+const workRouter = require('./work');
+minionRouter.use('/:minionId/work', workRouter);
+
 
 //router for minions
 minionRouter.param('minionId', (req, res, next, id) => {

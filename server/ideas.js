@@ -1,12 +1,12 @@
 const express = require('express');
 const ideaRouter = express.Router();
-const {createMeeting,
+const {
     getAllFromDatabase,
     getFromDatabaseById,
     addToDatabase,
     updateInstanceInDatabase,
     deleteFromDatabasebyId,
-    deleteAllFromDatabase} = require('./db'); 
+    } = require('./db'); 
 
 const checkMillionDollarIdea = require('./checkMillionDollarIdea');
 const bodyparser = require('body-parser');

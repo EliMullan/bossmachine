@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+app.use(express.static('public'))
 
 module.exports = app;
 

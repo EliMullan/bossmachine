@@ -1,11 +1,8 @@
 const express = require('express');
 const meetingRouter = express.Router();
-const {createMeeting,
+const {
     getAllFromDatabase,
-    getFromDatabaseById,
-    addToDatabase,
-    updateInstanceInDatabase,
-    deleteFromDatabasebyId,
+    addToDatabase,   
     deleteAllFromDatabase} = require('./db'); 
 const bodyparser = require('body-parser');
 meetingRouter.use(bodyparser.json());
